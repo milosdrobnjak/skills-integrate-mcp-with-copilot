@@ -16,12 +16,38 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.teacher-controls {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.teacher-controls button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.teacher-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.teacher-status {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.95;
 }
 
 header h1 {
@@ -55,6 +81,12 @@ section h3 {
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
   color: #1a237e;
+}
+
+.teacher-note {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #4a4a4a;
 }
 
 .activity-card {
@@ -190,6 +222,58 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-card h3 {
+  margin-bottom: 16px;
+  color: #1a237e;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.secondary-btn {
+  background-color: #eceff1;
+  color: #222;
+}
+
+.secondary-btn:hover {
+  background-color: #d9dfe3;
+}
+
+@media (max-width: 640px) {
+  .teacher-controls {
+    position: static;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
 }
 
 footer {
